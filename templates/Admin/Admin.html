@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link th:href="@{/lib/jquery/jquery-ui/jquery-ui.css}" rel="stylesheet" />
+    <link th:href="@{/lib/fontawesome/css/all.css}" rel="stylesheet" />
+    <link th:href="@{/lib/jquery/DataTables/datatables.css}" rel="stylesheet" />
+    <link th:href="@{/lib/jquery/DataTables/datatables.css}" rel="stylesheet" />
+    <link th:href="@{/lib/bootstrap/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/component/Admin/Admin.css}" rel="stylesheet" />
+
+    <script type="text/javascript" th:src="@{/lib/jquery/jquery-3.5.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/jquery/jquery-ui/jquery-ui.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/jquery/jquerysession.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/jquery/DataTables/datatables.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/fontawesome/js/all.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/bootstrap/js/bootstrap.bundle.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/bootstrap/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/component/Admin/Admin.js}"></script>
+
+    <script type="text/javascript" th:src="@{/lib/jquery/vfs_fonts.js}"></script>
+    <title>Admin</title>
+</head>
+<body>
+<div class="header">
+    <a href="#default" class="logo">CompanyLogo</a>
+    <div class="header-right">
+        <a class="active" href="/Authen">Logout</a>
+    </div>
+</div>
+<br>
+    <table style="width:100%;">
+        <tr style="width:100%;">
+            <td style="width:20%;">
+                <div class="card" style="width: 18rem;margin-left: 20px">
+                    <img class="card-img-top" src="/component/Image/customer.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">
+                        <h4>ประมวลผลข้อมูลลูกค้า</h4><br>
+                        <button type="button" id="processBtn" class="btn btn-secondary btn-lg btn-block">ประมวลผล</button>
+                        </p>
+                    </div>
+                </div>
+            </td>
+            <td style="width:20%;">
+                <div class="card" style="width: 18rem;margin-left: 20px">
+                    <img class="card-img-top" src="/component/Image/config.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">
+                        <h4>Parameter</h4><br>
+                        <button type="button" id="configBtn" class="btn btn-secondary btn-lg btn-block">Parameter</button>
+                        </p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+<br>
+<div>
+    <table id="job_table" class="display" style="width:100%;height: 100%">
+        <thead>
+        <tr>
+            <th>seq</th>
+            <th>JOB ID</th>
+            <th>STATUS</th>
+            <th>DATE</th>
+        </tr>
+        </thead>
+    </table>
+
+<br/>
+</div>
+<div class="footer"> <img src="/component/Image/images-5.jpeg" class="logo_footer"></div>
+<div id="dialog" title="Basic dialog">
+    <h2>Parameter</h2>
+    <hr>
+    <table>
+       <tr>
+           <td>KMean (k)</td>
+           <td>&nbsp;:&nbsp;</td>
+           <td>
+               <input type="text" id="kmean"/>
+           </td>
+           <td>
+               &nbsp;ค่า parameter ที่แนะนำ : <input type="text" id="kmean_suggets" disabled/>
+           </td>
+       </tr>
+        <tr>
+            <td>DBSCAN (eps)</td>
+            <td>&nbsp;:&nbsp;</td>
+            <td>
+                <input type="text" id="dbscan"/>
+            </td>
+            <td>
+                &nbsp;ค่า parameter ที่แนะนำ : <input type="text" id="dbscan_suggets" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <td>K-Medoids (k)</td>
+            <td>&nbsp;:&nbsp;</td>
+            <td>
+                <input type="text" id="kmedoids"/>
+            </td>
+            <td>
+                &nbsp;ค่า parameter ที่แนะนำ : <input type="text" id="kmedoids_suggets" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <td>Meanshift (bandwidth)</td>
+            <td>&nbsp;:&nbsp;</td>
+            <td>
+                <input type="text" id="meanshift"/>
+            </td>
+            <td>
+                &nbsp;ค่า parameter ที่แนะนำ : <input type="text" id="meanshift_suggets" disabled/>
+            </td>
+        </tr>
+   </table>
+</div>
+</body>
+</html>
